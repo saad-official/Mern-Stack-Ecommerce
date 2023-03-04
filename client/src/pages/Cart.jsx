@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { mobile } from "../responsive";
+import { publicRequest, userRequest } from "../requestMethods";
 import './Cart.css';
 
 const KEY = process.env.STRIPE_PUBLIC_KEY;
@@ -179,7 +180,7 @@ const Cart = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await axios.post('https://mern-stack-ecommerce-nu.vercel.app/api/checkout/payment', {
+        const res = await userRequest.post('/checkout/payment', {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components'
 import { Product } from './Product';
 import axios from 'axios';
+import { publicRequest } from '../requestMethods';
 import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
@@ -19,8 +20,8 @@ const Products = ({ cat, filters, sort, flag = false }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get((cat || flag) ? ( 
-          cat ? (`http://localhost:8080/api/products?category=${cat}`) :
-          (`http://localhost:8080/api/products`)) :( keyword ? `http://localhost:8080/api/products?keyword=${keyword}` :'http://localhost:8080/api/products?new=new'));
+          cat ? (`${publicRequest}/products?category=${cat}`) :
+          (`${publicRequest}/products`)) :( keyword ? `${publicRequest}/products?keyword=${keyword}` :`${publicRequest}/products?new=new`));
         
         setProduct(res.data)
       }

@@ -1,4 +1,5 @@
 import axios from "axios";
+// https://mern-stack-ecommerce-nu.vercel.app/api/products
 const BASE_URL = "https://mern-stack-ecommerce-nu.vercel.app/api/";
 // let temp = localStorage.getItem("persist:root");
 // console.log(temp);
