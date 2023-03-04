@@ -3,12 +3,10 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Announcment from "../components/Announcment";
-import { Add, Remove } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { useState } from "react";
 import { useEffect } from "react";
-import { userRequest } from "../requestMethods";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -40,12 +38,6 @@ const TopButton = styled.button`
   background-color: ${(props) => props.bg};
   color: ${(props) => (props.bg === "black" ? "white" : "black")};
   border: ${(props) => (props.bg === "black" ? "none" : "1px solid black")};
-  /* transition:     background-color 0.5s ease; */
-  /* :hover{
-    background-color: ${(props) => (props.bg === "black" ? "white" : "black")};
-    color:${(props) => (props.bg === "black" ? "black" : "white")};
-    border:${(props) => (props.bg === "black" ? "1px solid black" : "none")};
-} */
 `;
 
 const TopTexts = styled.div`
@@ -71,7 +63,6 @@ const Info = styled.div`
 
 const Summary = styled.div`
   flex: 1;
-  /* background-color: aquamarine; */
 `;
 
 const Product = styled.div`
@@ -188,7 +179,7 @@ const Cart = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await axios.post('http://localhost:8080/api/checkout/payment', {
+        const res = await axios.post('https://mern-stack-ecommerce-nu.vercel.app/api/checkout/payment', {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });

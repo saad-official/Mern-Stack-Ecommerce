@@ -2,9 +2,7 @@ require("dotenv").config();
 const router = require("express").Router();
 const KEY = process.env.PRIVATE_STRIPE_KEY;
 console.log("key", KEY);
-const stripe = require("stripe")(
-  "sk_test_51M1Q5XFep3JG9bio6F1iDstfS6T7EmmV4obA0W5gzBfPDe2qgx19lNJdVAs9eto7Q58Tef0dRjdlbyq6ZhH9nKIJ00cl25S5TZ"
-);
+const stripe = require("stripe")(KEY);
 
 router.post("/payment", (req, res) => {
   console.log(req.body);

@@ -16,7 +16,6 @@ import UserOrders from "./pages/UserOrders";
 import Search from "./pages/Search";
 const App = () =>
 {
-  // const user = true;
   const user = useSelector((state) => state.user.currentUser);
   console.log(user);
   return <div>
@@ -34,17 +33,9 @@ const App = () =>
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
         <Route path="/login" element={user ? <Navigate to={'/'}  /> : <Login/>} />
-        {/* <Route path="/register" element={user ? <Navigate to={'/'} /> : <Navigate to={'/register'} />}> 
-        </Route> */}
         <Route path="/register" element={<Register />} />
       </Routes>
       </BrowserRouter>
-    
-
-    {/* <Product /> */}
-    {/* <Register /> */}
-    {/* <Login/> */}
-    {/* <Cart /> */}
 
   </div>;
 };

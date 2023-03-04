@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Announcment from '../components/Announcment';
-import { publicRequest, userRequest } from "../requestMethods";
+import {  userRequest } from "../requestMethods";
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -13,14 +13,6 @@ const Container = styled.div`
   width: 100%;
 `;
 const SubContainer = styled.div`
-  /* display: flex; */
-`;
-const InnerContainer = styled.div`
-display: flex;
-/* gap: 20px; */
-/* align-items: center; */
-    /* grid-template-columns: 300px;  */
-    /* max-width: 480px; */
 `;
 
 const UserOrders = () => {
@@ -70,15 +62,7 @@ const UserOrders = () => {
           </tbody>
           </table>
           </section>
-          {/* {orders.map((item) => (
-              <InnerContainer>
-                  <div>{item.userId}</div>
-              <div>{item.amount}</div>
-              <div>{item.quantity}</div>
-                  <div>{item.status}</div>
-           </InnerContainer> 
-          ))} */}
-        </SubContainer>
+               </SubContainer>
       </Container>
       </>
   )

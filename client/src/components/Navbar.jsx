@@ -5,14 +5,11 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import styled from "styled-components";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
 import { logout } from "../redux/userRedux";
 import { mobile } from '../responsive';
 const Container = styled.div`
   height: 60px;
   ${mobile({height:'50px'})}
-  /* background-color: orange; */
 `;
 
 const Wrapper = styled.div`
@@ -85,8 +82,6 @@ const Navbar = () => {
           <Language> En </Language>
           <SearchContainer>
            <Search />
-            {/* <Input />
-            <Search style={{color:"gray", fontSize:16}} ></Search>  */}
           </SearchContainer>
         </Left>
         <Center>
@@ -98,7 +93,6 @@ const Navbar = () => {
           {user ?
            
             <>
-              {/* <MenuItem>MY ACCOUNT</MenuItem> */}
             <a style={{textDecoration:'none',color:'black' }} href={`/orders/${user._id}`}> <MenuItem>MY ORDERS</MenuItem> </a>
               <MenuItem onClick={(e) => handleLogout()}>LOGOUT</MenuItem>
             </>:<>

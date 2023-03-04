@@ -98,8 +98,6 @@ const AmountContainer = styled.div`
 display:flex;
 align-items: center;
 font-weight: 700;
-/* width: 50%; */
-/* justify-content: space-between; */
 `;
 
 const Amount = styled.span`

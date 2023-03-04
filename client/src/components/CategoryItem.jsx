@@ -6,7 +6,6 @@ import { mobile } from '../responsive';
 const Container = styled.div`
 flex:1;
 margin:3px;
-/* text-align: center; */
 position: relative;
 height: 500px;
 min-height: 500px;

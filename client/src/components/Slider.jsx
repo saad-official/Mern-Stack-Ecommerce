@@ -1,12 +1,10 @@
 import {
-  ArrowBackIosOutlined,
   ArrowLeftOutlined,
   ArrowRightOutlined,
 } from "@material-ui/icons";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from '../responsive';
-// import pic from "../components/b6.jpg";
 import { sliderItems } from "../data";
 import { Link } from 'react-router-dom';
 const Container = styled.div`
@@ -14,7 +12,6 @@ const Container = styled.div`
 
   width: 100%;
   height: 100vh;
-  /* background-color: #d2cbcb; */
   position: relative;
   overflow: hidden;
 `;
@@ -68,19 +65,13 @@ const ImgContainer = styled.div`
   position: relative;
   height: 100%;
   object-fit: cover;
-  /* background-color: bisque; */
-  /* width: 80%; */
   flex: 1;
-  /* margin-left: 2rem; */
 `;
 
 const ImgInfoContainer = styled.div`
-  /* background-color: green; */
-  /* flex: 1 1 50rem; */
-  /* height: 100vh; */
   width: 100vw;
   padding: 50px;
-  /* min-width: 20%; */
+
   flex: 1;
 `;
 
@@ -88,10 +79,6 @@ const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-  /* background-position: center; */
-  /* width: 100%; */
-  /* min-width:100%; */
-  /* object-fit: cover; */
 `;
 const Title = styled.h1`
   font-size: 50px;
@@ -120,15 +107,6 @@ const Button = styled.button`
   }
 `;
 
-const CircleContainer = styled.div`
-  width: 100px;
-  height: 100px;
-  background-color: aqua;
-  position: absolute;
-  top: 0;
-  /* left: 60%; */
-  /* right: 50%; */
-`;
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);

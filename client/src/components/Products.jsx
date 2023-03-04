@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import styled from 'styled-components'
-import { popularProducts } from '../data';
 import { Product } from './Product';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
@@ -23,8 +22,6 @@ const Products = ({ cat, filters, sort, flag = false }) => {
           cat ? (`http://localhost:8080/api/products?category=${cat}`) :
           (`http://localhost:8080/api/products`)) :( keyword ? `http://localhost:8080/api/products?keyword=${keyword}` :'http://localhost:8080/api/products?new=new'));
         
-        // {flag ? res =  await axios.get(`http://localhost:8080/api/products`): ''}
-        // console.log('sss', res.data);
         setProduct(res.data)
       }
       catch (err) {
@@ -64,8 +61,7 @@ const Products = ({ cat, filters, sort, flag = false }) => {
       );
     }
   }, [sort]);
-  
-  // console.log('filter', filterProduct);
+
   return (
     <>
       

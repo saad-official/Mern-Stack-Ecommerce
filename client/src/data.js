@@ -1,4 +1,3 @@
-import pic from "../src/components/Online-Portal-E-Commerce-PNG-File.png";
 export const sliderItems = [
   {
     id: 1,

@@ -1,13 +1,7 @@
 import React from 'react'
-import { popularProducts } from '../data'
 import styled from 'styled-components';
-
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import axios from 'axios';
-import { publicRequest } from '../requestMethods';
+import { Link } from 'react-router-dom';
 
 const Info = styled.div`
 opacity: 0;
@@ -48,7 +42,6 @@ opacity: 1;
 const Image = styled.img`
   height : 75%;
   z-index: 2;
-  /* margin-left: 2rem; */
 `;
 
 const Circle = styled.div`
@@ -79,7 +72,6 @@ transition: all 0.5s ease;
 `;
 
 export const Product = ({ product }) => {
-    // console.log('i am in single pro ' ,product);
   return (
       <Container>
           <Circle />

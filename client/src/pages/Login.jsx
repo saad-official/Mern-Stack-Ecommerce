@@ -13,7 +13,6 @@ background:  linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) 
 display: flex;
 justify-content: center;
 align-items: center;
-/* background-position: center; */
 background-size: cover;
 object-fit: cover;
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  redirect, useNavigate } from 'react-router-dom';
+import {   useNavigate } from 'react-router-dom';
 
 import styled from 'styled-components'
 import { publicRequest } from '../requestMethods';
@@ -84,7 +84,6 @@ const Register = () => {
         const res = await publicRequest.post("/auth/register", {
             name, username, password, email
         });
-            // console.log(res);
             {res && navigate("/")}
         } catch (error) {
             console.log(error);
@@ -113,7 +112,6 @@ const Register = () => {
                   <Input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="confirm Password" />
 
                   <Agreement>
-                      {/* <input type="checkbox" name="" id="" /> */}
                   By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
                   </Agreement>
