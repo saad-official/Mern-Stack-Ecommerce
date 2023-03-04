@@ -6,7 +6,7 @@ const {
   verifyToken,
   verifyTokenAndAuthorization,
   verifyTokenAndAdmin,
-} = require("./VerifyToken");
+} = require("./verifyToken");
 
 // Create Cart
 router.post("/", verifyToken, async (req, res) => {

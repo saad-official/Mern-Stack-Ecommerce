@@ -5,7 +5,7 @@ const {
   verifyToken,
   verifyTokenAndAuthorization,
   verifyTokenAndAdmin,
-} = require("./VerifyToken");
+} = require("./verifyToken");
 
 // Create Product
 router.post("/", async (req, res) => {
