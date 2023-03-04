@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://mern-stack-ecommerce-nu.vercel.app/api/products/api/";
+const BASE_URL = "https://mern-stack-ecommerce-nu.vercel.app/api/";
 let temp = localStorage.getItem("persist:root");
 console.log(temp);
 let TOKEN = "";
