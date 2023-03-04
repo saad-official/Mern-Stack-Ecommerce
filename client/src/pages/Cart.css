@@ -1,0 +1,48 @@
+.cart {
+  overflow-x: auto;
+}
+.cart table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+.cart table td:nth-child(1) {
+  width: 200px;
+  text-align: center;
+}
+.cart table td:nth-child(2) {
+  width: 150px;
+  text-align: center;
+}
+.cart table td:nth-child(3) {
+  width: 250px;
+  text-align: center;
+}
+.cart table td:nth-child(4) {
+  width: 150px;
+  text-align: center;
+}
+.cart table td:nth-child(5) input {
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+  /* height: 70px; */
+  /* text-align: center; */
+}
+/* .cart table thead td {
+  ;
+} */
+.cart table thead td {
+  border: 1px solid gray;
+  border-left: none;
+  border-right: none;
+  padding: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.cart table tbody tr td {
+  padding-top: 1.2rem;
+}
+.cart table tbody td {
+  font-size: 1.1rem;
+}
