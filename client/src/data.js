@@ -45,7 +45,7 @@ export const categories = [
   },
   {
     id: 4,
-    img: "https://cdn.edenrobe.com/media/wysiwyg/homepage/23.2.25_edenrobe_HomePageBanner_Fragrance_DSKTP.jpg",
+    img: "https://edenrobe.com/cdn/shop/files/9.12.22_edenrobe_Menu_BodyMist_DSKTP_670x_crop_center.webp?v=1702113289",
     title: "Fragenece",
     cat: "fragenece",
   },
@@ -59,7 +59,7 @@ export const categories = [
 
   {
     id: 4,
-    img: "https://ae01.alicdn.com/kf/S728ed0106ed643fcb8f43a423f2ce104g/New-Smart-Watch-For-Women-Full-Touch-Screen-Bluetooth-Waterproof-Watches-Sports-Fitness-Tracker-Smartwatch-Female.jpg_Q90.jpg",
+    img: "https://www.apple.com/v/watch/bj/images/overview/se/tile_watch_se__cuswe7ukqd6q_large_2x.jpg",
     title: "Watches",
     cat: "watch",
   },
