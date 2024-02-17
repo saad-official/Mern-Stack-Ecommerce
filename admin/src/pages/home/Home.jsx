@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { userRequest } from "../../requestMethods";
 
 export default function Home() {
-
   const [userStats, setUserStats] = useState([]);
 
   const MONTHS = useMemo(
@@ -30,22 +29,18 @@ export default function Home() {
     []
   );
 
-
   useEffect(() => {
     const getStats = async () => {
       try {
-        
         const res = await userRequest.get("/users/stats");
         res.data.map((item) =>
           setUserStats((prev) => [
             ...prev,
-            { name: MONTHS[item._id - 1], "Active User": item.total }
+            { name: MONTHS[item._id - 1], "Active User": item.total },
           ])
         );
-      } catch (error) {
-        
-      }
-    }
+      } catch (error) {}
+    };
     getStats();
   }, [MONTHS]);
 
@@ -53,10 +48,15 @@ export default function Home() {
   return (
     <div className="home">
       <FeaturedInfo />
-      <Chart data={userStats} title="User Analytics" grid dataKey="Active User"/>
+      <Chart
+        data={userStats}
+        title="User Analytics"
+        grid
+        dataKey="Active User"
+      />
       <div className="homeWidgets">
-        <WidgetSm/>
-        <WidgetLg/>
+        <WidgetSm />
+        <WidgetLg />
       </div>
     </div>
   );

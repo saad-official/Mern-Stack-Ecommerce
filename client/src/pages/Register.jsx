@@ -85,7 +85,7 @@ const Register = () => {
         email,
       });
       {
-        res && navigate("/");
+        res && navigate("/login");
       }
     } catch (error) {
       console.log(error);

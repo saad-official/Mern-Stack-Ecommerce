@@ -186,7 +186,9 @@ const Cart = () => {
         });
         history('/success', { state: { stripeData: res.data, products: cart }});
      
-      } catch (error) {}
+      } catch (error) {
+        console.log("err", error);
+      }
       };
     stripeToken &&   makeRequest();
   }, [stripeToken, cart.total, history]);

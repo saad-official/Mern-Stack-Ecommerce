@@ -4,14 +4,14 @@ import { DeleteOutline } from "@material-ui/icons";
 import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { deleteProduct, getProducts } from "../../redux/apiCalls";
 export default function PsroductList() {
   // const [data, setData] = useState(productRows);
   const dispatch = useDispatch();
-  const products  = useSelector((state)=> state.product.products)
-   useEffect(() => {
+  const products = useSelector((state) => state.product.products);
+  useEffect(() => {
     getProducts(dispatch);
   }, [dispatch]);
 

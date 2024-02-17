@@ -4,40 +4,29 @@ import { DeleteOutline } from "@material-ui/icons";
 import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { deleteProduct, getProducts } from "../../redux/apiCalls";
 import { userRequest } from "../../requestMethods";
 export default function Transaction() {
-  // const [data, setData] = useState(productRows);
   const dispatch = useDispatch();
   const [orders, setOrders] = useState([]);
-  // const products = useSelector((state) => state.product.products);
 
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await userRequest.get('/orders');
+        const res = await userRequest.get("/orders");
         setOrders(res.data);
 
-
-        // console.log(setOrders([...orders,{ quantity:ob}]))
-        // setOrders([...orders, { quantity: orders.map((or) => {
-        //     return or.products.length
-        // })
-        // }])
-
-        console.log('ord', orders);
-          } catch (error) {
-            console.log(error);
-          }
-    }
+        console.log("ord", orders);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getOrders();
-}, [orders]);
-
+  }, []);
 
   const handleDelete = (id) => {
-    // setData(data.filter((item) => item.id !== id));
     deleteProduct(id, dispatch);
   };
 
@@ -47,16 +36,7 @@ export default function Transaction() {
       field: "quantity",
       headerName: "Qunatity",
       width: 200,
-      // renderCell: (params) => {
-      //   return (
-      //     <div className="productListItem">
-      //       <img className="productListImg" src={params.row.img} alt="" />
-      //       {params.row.title}
-      //     </div>
-      //   );
-      // },
     },
-    // { field: "inStock", headerName: "Stock", width: 180 },
     {
       field: "status",
       headerName: "Status",

@@ -5,7 +5,7 @@ import { userRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { getUsers } from "../../redux/apiCalls";
 export default function UserList() {
   const [data, setData] = useState(userRows);
@@ -14,14 +14,14 @@ export default function UserList() {
 
   useEffect(() => {
     getUsers(dispatch);
-  }, [dispatch])
+  }, [dispatch]);
 
-  console.log('users', users);
+  console.log("users", users);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
-  
+
   const columns = [
     { field: "_id", headerName: "ID", width: 220 },
     {
@@ -31,7 +31,13 @@ export default function UserList() {
       renderCell: (params) => {
         return (
           <div className="userListUser">
-            <img className="userListImg" src={"https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"} alt="" />
+            <img
+              className="userListImg"
+              src={
+                "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              }
+              alt=""
+            />
             {params.row.username}
           </div>
         );

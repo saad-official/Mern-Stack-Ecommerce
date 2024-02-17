@@ -12,18 +12,26 @@ import {
   addProductFailure,
   addProductStart,
   addProductSuccess,
-
 } from "./productRedux";
-import { getUserFailure, getUserStart, getUserSuccess, loginFailure, loginStart, loginSuccess } from "./userRedux";
+import {
+  getUserFailure,
+  getUserStart,
+  getUserSuccess,
+  loginFailure,
+  loginStart,
+  loginSuccess,
+} from "./userRedux";
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
     console.log(res);
+    window.location.reload();
     dispatch(loginSuccess(res.data));
   } catch (error) {
     console.log(error);
+    alert("Something Went Wrong");
     dispatch(loginFailure());
   }
 };
@@ -69,21 +77,21 @@ export const addProduct = async (product, dispatch) => {
   dispatch(addProductStart());
   try {
     // Add
-    const res = await userRequest.post('/products', product);
+    const res = await userRequest.post("/products", product);
     dispatch(addProductSuccess(res.data));
   } catch (error) {
     dispatch(addProductFailure());
   }
-}
+};
 
 // Users
 export const getUsers = async (dispatch) => {
   dispatch(getUserStart());
   try {
-    const res = await userRequest.get('/users');
+    const res = await userRequest.get("/users");
     console.log(res);
     dispatch(getUserSuccess(res.data));
-} catch (error) {
+  } catch (error) {
     dispatch(getUserFailure());
-}
-}
+  }
+};

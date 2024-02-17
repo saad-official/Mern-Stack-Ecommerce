@@ -15,7 +15,6 @@ import Login from "./pages/login/Login";
 import { useHistory } from "react-router-dom";
 import Transaction from "./pages/transaction/Transaction";
 function App() {
-  // const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin ? JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin : 'ddd';
   const admin = useSelector((state) => state.user.currentUser);
   let history = useHistory();
   return (
@@ -59,7 +58,6 @@ function App() {
         )}
         <Route>{!admin?.isAdmin && history.push("/login")}</Route>
         <Route path={"/login"}>{admin?.isAdmin && history.push("/")}</Route>
-        {/* <Route path="/login" element={user ? <Navigate to={'/'}  /> : <Login/>} /> */}
       </Switch>
     </Router>
   );
